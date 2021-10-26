@@ -1,11 +1,17 @@
 import {Container, Nav, Navbar} from "react-bootstrap";
 
+import logo from '../logo.png';
+
 const NavBar = () => {
     return(
         <>
             <Navbar bg="light" expand="lg">
             <Container fluid>
-                <Navbar.Brand href="#">Green Mode</Navbar.Brand>
+                <Navbar.Brand href="#">
+                    <img 
+                    src={logo} alt="Green Mode logo"
+                    className="w-25"/>
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                 <Nav
@@ -13,7 +19,7 @@ const NavBar = () => {
                     style={{ maxHeight: '200px' }}
                     navbarScroll
                 >
-                    <Nav.Link href="#action2">New In</Nav.Link>
+                    <Nav.Link href="#">New In</Nav.Link>
                     <Nav.Link href="#">Sale</Nav.Link>
                     <Nav.Link href="#">Tiendas</Nav.Link>
                     <Nav.Link href="#">Ferias</Nav.Link>
