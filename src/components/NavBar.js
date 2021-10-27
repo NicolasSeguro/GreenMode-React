@@ -1,5 +1,6 @@
 import {Container, Nav, Navbar} from "react-bootstrap";
 
+import CartWidget from "./Cart/CartWidget";
 import logo from '../logo.png';
 
 const NavBar = () => {
@@ -24,6 +25,7 @@ const NavBar = () => {
                     <Nav.Link href="#">Tiendas</Nav.Link>
                     <Nav.Link href="#">Ferias</Nav.Link>
                 </Nav>
+                <CartWidget/>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
