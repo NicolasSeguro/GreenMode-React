@@ -1,11 +1,47 @@
-import ItemCountProduct from "../ItemCount/ItemCount"
-import React from "react";
+import React, {useEffect, useState} from "react";
 
-function ItemListContainer({items}) {
+import ItemList from "./ItemList";
+import products from "../../db/items";
+import { useParams } from "react-router";
+
+//Llamada a la api de los items
+const getItems = new Promise((res, rej) => {
+
+    const condition = true;
+    if (condition) {
+        setTimeout(() => {
+            res(products)
+        }, 2000)
+    } else {
+        rej('404 Not found')
+    }
+
+})
+
+const ItemListContainer = () => {
+    const [items, setItems] = useState([])
+    
+    const { id } = useParams();
+
+   
+    useEffect(() => {
+        if (id) {
+            getItems
+                .then(res => setItems(res.filter(prod => prod.estado === id)))
+                .catch(err => console.log(err))
+        } else {
+             getItems
+                 .then(res => setItems(res))
+                 .catch(err => console.log(err))
+            
+        }
+
+       
+    },[id] )
+
     return (
         <>
-            <h1>{items}</h1>
-            <ItemCountProduct initial='1' stock='20'/>
+            <ItemList items={items} />
         </>
     )
 }
