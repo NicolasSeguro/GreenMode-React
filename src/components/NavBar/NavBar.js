@@ -1,7 +1,8 @@
 import {Container, Nav, Navbar} from "react-bootstrap";
 
-import CartWidget from "./Cart/CartWidget";
-import logo from '../logo.png';
+import CartWidget from '../Cart/CartWidget'
+import { Link } from "react-router-dom";
+import logo from '../../logo.png'
 
 const NavBar = () => {
     return(
@@ -9,9 +10,12 @@ const NavBar = () => {
             <Navbar bg="light" expand="lg">
             <Container fluid>
                 <Navbar.Brand href="#">
-                    <img 
-                    src={logo} alt="Green Mode logo"
-                    className="w-25"/>
+                    <Link to={'/'}>
+                        <img 
+                        src={logo} alt="Green Mode logo"
+                        className="w-25"/>
+                    </Link>
+                    
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
@@ -20,12 +24,14 @@ const NavBar = () => {
                     style={{ maxHeight: '200px' }}
                     navbarScroll
                 >
-                    <Nav.Link href="#">New In</Nav.Link>
-                    <Nav.Link href="#">Sale</Nav.Link>
-                    <Nav.Link href="#">Tiendas</Nav.Link>
-                    <Nav.Link href="#">Ferias</Nav.Link>
+                    <Link to={'/categoria/new'}>New In</Link>
+                    <Link to={'/categoria/sale'}>Sale</Link>
+                    <Link to={'/categoria/tiendas'}>Tiendas</Link>
+                    <Link to={'/categoria/ferias'}>Ferias</Link>
                 </Nav>
-                <CartWidget/>
+                <Link to={'/cart'}>
+                    <CartWidget/>
+                </Link>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

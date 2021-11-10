@@ -5,13 +5,13 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Banners from './components/Home/banners/Banner';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import ItemListContainer from './components/itemList/ItemListContainer';
-import Navbar from './components/NavBar';
+import NavBar from './components/NavBar/NavBar';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar/>
+        <NavBar/>
         <Banners/>
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
