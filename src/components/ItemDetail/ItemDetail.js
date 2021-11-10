@@ -1,7 +1,7 @@
 import ItemCount from "../ItemCount/ItemCount"
 import React from 'react'
 
-const ItemDetail = ({ item, onAdd }) => {
+const ItemDetail = ({ item}) => {
     
     return (
         
@@ -17,7 +17,7 @@ const ItemDetail = ({ item, onAdd }) => {
                     <li className="list-group-item text-dark fs-5">{item.stock} unidades en stock </li>
                     <li className="list-group-item text-dark fs-5">Precio: ${item.price} </li>
                 </ul>
-                   <ItemCount stock={item.stock} initial="1" title={item.title} onAdd={onAdd}/>
+                   <ItemCount stock={item.stock} initial="1" title={item.title} />
             </div>           
         </div>
     )
