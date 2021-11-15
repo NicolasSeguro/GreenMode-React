@@ -65,6 +65,32 @@ const products = [
         categories: 'sale'
 
     },
+    // Tiendas
+    {
+        id: "6",
+        title: "Hoodie",
+        price: 225,
+        image: "https://shop.goop-img.com/cdn-cgi/image/height=300,width=300,dpr=3,format=auto,onerror=redirect,metadata=copyright/spree/images/attachments/000/073/342/large/open-uri20211101-29861-1wm9z6c?version=1635787015.webp",
+        stock: 10,
+        description: 'Es el clásico de Desmond y Dempsey: una camisa hecha a la medida de él para ella junto con el par más cómodo de boxers a juego. ',
+        details: '100% algodón',
+        categories: 'tiendas'
+
+    },
+    // Ferias
+    {
+        id: "6",
+        title: "Hoodie",
+        price: 225,
+        image: "https://shop.goop-img.com/cdn-cgi/image/height=300,width=300,dpr=3,format=auto,onerror=redirect,metadata=copyright/spree/images/attachments/000/073/342/large/open-uri20211101-29861-1wm9z6c?version=1635787015.webp",
+        stock: 10,
+        description: 'Es el clásico de Desmond y Dempsey: una camisa hecha a la medida de él para ella junto con el par más cómodo de boxers a juego. ',
+        details: '100% algodón',
+        categories: 'ferias'
+
+    },
+
+
     
 ]
 

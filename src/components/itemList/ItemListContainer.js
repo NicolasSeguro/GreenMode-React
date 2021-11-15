@@ -4,40 +4,28 @@ import ItemList from "./ItemList";
 import products from "../../db/items";
 import { useParams } from "react-router";
 
-//Llamada a la api de los items
-const getItems = new Promise((res, rej) => {
-
-    const condition = true;
-    if (condition) {
-        setTimeout(() => {
-            res(products)
-        }, 2000)
-    } else {
-        rej('404 Not found')
-    }
-
-})
-
 const ItemListContainer = () => {
+    
     const [items, setItems] = useState([])
     
-    const { id } = useParams();
+    const { categories } = useParams();
 
-   
-    useEffect(() => {
-        if (id) {
-            getItems
-                .then(res => setItems(res.filter(prod => prod.estado === id)))
-                .catch(err => console.log(err))
-        } else {
-             getItems
-                 .then(res => setItems(res))
-                 .catch(err => console.log(err))
+    //Llamada a la api de los items
+    const getProduct = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if(categories === undefined) {
+                resolve(products)
+            } else {
+                resolve(products.filter(product => product.categories === categories))
+            }
             
-        }
-
-       
-    },[id] )
+        }, 600)
+    })
+    
+    useEffect(() => {
+        getProduct.then(rta => setItems(rta))
+    }, [categories])
+    
 
     return (
         <>
